@@ -83,11 +83,11 @@
 
   <div class="container" id="diary-entries">
           <!-- Day 1 -->
-  <div class="day-entry">
+  <!-- <div class="day-entry">
     <h2>Day 1</h2>
-    <p><strong>Learning Summary:</strong> Learned the basics of prompt engineering, its importance, types, and how to write effective prompts. </p>
+    <p><strong>Learning Summary:</strong>  </p>
     <p><a href="Day1.pdf" target="_blank">Download Day 1 PDF</a></p>
-  </div>
+  </div> -->
   </div>
 
   <footer>
@@ -96,16 +96,27 @@
 
   <script>
     const entriesContainer = document.getElementById('diary-entries');
-    for (let day = 1; day <= 20; day++) {
-      const entry = document.createElement('div');
-      entry.className = 'day-entry';
-      entry.innerHTML = `
-        <h2>Day ${day}</h2>
-        <p><strong>Learning Summary:</strong> Brief description of what you learned on day ${day}.</p>
-        <p><a href="pdfs/day${day}.pdf" target="_blank">Download Day ${day} PDF</a></p>
-      `;
-      entriesContainer.appendChild(entry);
-    }
+
+const days = [
+  {
+    day: 1,
+    summary: "Learned the basics of prompt engineering, its importance, types, and how to write effective prompts.",
+    pdf: "Day1.pdf"
+  },
+  // Add more days later
+];
+
+for (let i = 0; i < days.length; i++) {
+  const entry = document.createElement('div');
+  entry.className = 'day-entry';
+  entry.innerHTML = `
+    <h2>Day ${days[i].day}</h2>
+    <p><strong>Learning Summary:</strong> ${days[i].summary}</p>
+    <p><a href="${days[i].pdf}" target="_blank">Download Day ${days[i].day} PDF</a></p>
+  `;
+  entriesContainer.appendChild(entry);
+}
+
   </script>
 </body>
 </html>
