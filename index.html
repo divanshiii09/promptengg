@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Training Diary - TR-102 Report</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #eef2f7;
+      margin: 0;
+      color: #333;
+    }
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 2rem 1rem 1rem;
+      text-align: center;
+    }
+    header img {
+      height: 80px;
+    }
+    header .college-name {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin: 0.5rem 0;
+    }
+    header .info {
+      font-size: 0.95rem;
+      margin-top: 1rem;
+    }
+    .container {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .day-entry {
+      background-color: white;
+      border-left: 5px solid #007bff;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border-radius: 10px;
+    }
+    .day-entry h2 {
+      margin-top: 0;
+      color: #003366;
+    }
+    .day-entry p {
+      margin-bottom: 0.5rem;
+    }
+    .day-entry a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+    header .logo-container {
+        display: inline-block;
+        background-color: white;
+        border-radius: 8px;
+        padding: 0.5rem;
+      }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+        <img src="https://upload.wikimedia.org/wikipedia/en/e/ec/Guru_Nanak_Dev_Engineering_College%2C_Ludhiana_logo.png" alt="GNDEC Logo">
+    </div>
+    <div class="college-name">Guru Nanak Dev Engineering College, Ludhiana</div>
+    <div class="info">
+      <div>Training TR-102 Report</div>
+      <div>Divanshi Goyal | URN: 2302513 | CRN: 2315056</div>
+      <div>2nd Year, CSE Branch</div>
+    </div>
+  </header>
+
+  <div class="container" id="diary-entries">
+          <!-- Day 1 -->
+  <div class="day-entry">
+    <h2>Day 1</h2>
+    <p><strong>Learning Summary:</strong> Learned the basics of prompt engineering, its importance, types, and how to write effective prompts. </p>
+    <p><a href="Day1.pdf" target="_blank">Download Day 1 PDF</a></p>
+  </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Divanshi Goyal. All rights reserved.
+  </footer>
+
+  <script>
+    const entriesContainer = document.getElementById('diary-entries');
+    for (let day = 1; day <= 20; day++) {
+      const entry = document.createElement('div');
+      entry.className = 'day-entry';
+      entry.innerHTML = `
+        <h2>Day ${day}</h2>
+        <p><strong>Learning Summary:</strong> Brief description of what you learned on day ${day}.</p>
+        <p><a href="pdfs/day${day}.pdf" target="_blank">Download Day ${day} PDF</a></p>
+      `;
+      entriesContainer.appendChild(entry);
+    }
+  </script>
+</body>
+</html>
