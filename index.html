@@ -131,7 +131,11 @@ const days = [
   {
     day: 7,
     summary: "Created a text-to-speech converter with xtts and a speech-to-speech system by combining Whisper and xtts in a real-time voice transformation pipeline.",
-    pdf: "Day7.pdf"
+    pdf: "Day7.pdf",
+    notebooks: [ 
+      { name: "Speech to Text Converter", file: "SpeechToText" },
+      { name: "Speech to Speech Converter", file: "SpeechToSpeech" }
+    ]
   },
   {
     day: 8,
@@ -153,10 +157,20 @@ const days = [
 for (let i = 0; i < days.length; i++) {
   const entry = document.createElement('div');
   entry.className = 'day-entry';
+
+  let notebookLinks = '';
+  if (days[i].notebooks && days[i].notebooks.length > 0) {
+    notebookLinks = '<p><strong>Notebook(s):</strong></p><ul>';
+    days[i].notebooks.forEach(nb => {
+      notebookLinks += `<li><a href="${nb.file}" target="_blank">${nb.name}</a></li>`;
+    });
+    notebookLinks += '</ul>';
+  }
   entry.innerHTML = `
     <h2>Day ${days[i].day}</h2>
     <p><strong>Learning Summary:</strong> ${days[i].summary}</p>
     <p><a href="${days[i].pdf}" target="_blank">Download Day ${days[i].day} PDF</a></p>
+    ${notebookLinks}
   `;
   entriesContainer.appendChild(entry);
 }
